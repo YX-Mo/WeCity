@@ -52,18 +52,25 @@ const SearchCity = (props)=> {
 
     return(
         <Form className="search_container" onSubmit={onSearchCityHandler}>
-          <Form.Group className="search_input" controlId="formBasicPassword">
+            {/* <Form.Group className="search_input" controlId="formBasicPassword">
                 <Form.Control 
                     type="text" 
                     placeholder='Search a city...' 
                     value = {city}
                     onChange = {onCityInputChangeHandler}
                 />
-                <Button variant="primary" type="submit" disable={!isFormValid}>         
+                <button variant="primary" type="submit" disable={!isFormValid}>         
                     <img className='search_button_image'/>
-                </Button>
+                </button>
+            </Form.Group> */}
+            <div className='inputWrapper'> 
+                <input type="input" value={city} onChange={onCityInputChangeHandler} placeholder="e.g. London,England" className="search_input" />
+                <button type="submit" disable={!isFormValid}>         
+                    <img className='search_button_image'/>
+                </button>
+            </div>
+            
 
-            </Form.Group>
             {error &&  <Alert varient='danger'>
                 no matching data
             </Alert>

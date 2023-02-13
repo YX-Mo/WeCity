@@ -20,7 +20,7 @@ const Weather = (props)=> {
     return(
         <Card className="text-center">
             <Card.Header>
-                <h1>Weather App☀️</h1>
+                <h1>WeCity☀️</h1>
             </Card.Header>
             <Card.Body>
                 <SearchCity search={onSearch} setIsLoading={setIsLoading}/>

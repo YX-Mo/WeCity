@@ -6,8 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import './SearchCity.css';
 
-
-
 const SearchCity = (props)=> {
     const [city, setCity] = useState('');
     const [showAirQuality,setShowAirQuality] = useState(false);
@@ -51,7 +49,8 @@ const SearchCity = (props)=> {
     }
 
     return(
-        <Form className="search_container" onSubmit={onSearchCityHandler}>
+        
+        <form className="search_container" onSubmit={onSearchCityHandler}>
             {/* <Form.Group className="search_input" controlId="formBasicPassword">
                 <Form.Control 
                     type="text" 
@@ -76,11 +75,12 @@ const SearchCity = (props)=> {
             </Alert>
             }
             
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Show air quality data" onChange={onCheckBoxChangeHandler}/>
-            </Form.Group>
+            <div className='aqicheckbox_container'>
+                <input className='aqiCheckbox' type="checkbox" onChange={onCheckBoxChangeHandler}/>
+                <label>Show air quality data</label>
+            </div>
             
-        </Form>
+        </form>
     )
 }
 

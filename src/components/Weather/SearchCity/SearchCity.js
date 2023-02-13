@@ -29,12 +29,10 @@ const SearchCity = (props)=> {
             //todo: error
             return;
         }
-
         try {
             props.setIsLoading(true);
             const weatherData = await fetchWeatherByCity(city, showAirQuality);
             props.search(weatherData);
-            
         } catch (error) {
             console.log('Failed to fetch city weather due to error: ', error)
             setError(error.message);
@@ -68,18 +66,14 @@ const SearchCity = (props)=> {
                     <img className='search_button_image'/>
                 </button>
             </div>
-            
-
             {error &&  <Alert varient='danger'>
                 no matching data
             </Alert>
             }
-            
             <div className='aqicheckbox_container'>
                 <input className='aqiCheckbox' type="checkbox" onChange={onCheckBoxChangeHandler}/>
                 <label>Show air quality data</label>
             </div>
-            
         </form>
     )
 }

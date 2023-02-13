@@ -21,26 +21,39 @@ const WeatherResult =(props) => {
 
 
     return (
-        <div>
-            <div>
-                <h2>{location.name}, {location.region}</h2>
-                <p>{dateTime.toLocaleDateString('en-AU', options)}</p>
-            </div>
+        <div className="weatherResultContainer">
+            <div className="basicInfoContainer">
+                <div className="cityInfo">
+                    <h2>{location.name}</h2>
+                    <h3>{location.region}</h3>
+                    <p>{dateTime.toLocaleDateString('en-AU', options)}</p>
+                </div>
 
-            <ul className='weatherList' >
-                <li>
-                    <img src = {weather.condition.icon} alt =''/>
-                    <p>{weather.condition.text}</p>
-                </li>
-                <li>
-                    <p>Temp: {weather.temp_c} °C</p>
-                </li>
-                <li>
-                    <p>Wind: {weather.wind_kph} km/hr</p>
-                </li>
-            </ul>
-            { 
-            airQualityData && <AirQualityResult airQuality={airQualityData}/>}
+                <div className='currentWeather'>
+                    <div className="currentWeatherDescriptionContainer">
+                        <img src = {weather.condition.icon} alt =''/>
+                        <p className="weatherDescription">{weather.condition.text}</p>
+                    </div>
+                    <ul className="currentWeatherDetails">
+                        <li>
+                            <p>Temp: {weather.temp_c} °C</p>
+                        </li>
+                        <li>
+                            <p>Wind: {weather.wind_kph} km/hr</p>
+                        </li>
+                        <li>
+                            <p>Pressure: {weather.pressure_mb} mbar</p>
+                        </li>
+                        <li>
+                            <p>Humidity: {weather.humidity} %</p>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+
+            { airQualityData && <AirQualityResult airQuality={airQualityData}/>}
         </div>
     );
 };

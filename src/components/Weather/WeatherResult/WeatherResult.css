@@ -1,6 +1,28 @@
-ul {
-    list-style-type: none;
-    display: block;
+.basicInfoContainer{
+    display: flex;
+    padding-top: 40px;
+    height: 220px;
+    justify-content: space-around;
+}
+
+.cityInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    text-align: center;
+    padding: 10px 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    
+
+}
+
+.currentWeather {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -9,6 +31,24 @@ ul {
     padding-left: 0;
 }
 
-.weatherList {
-    padding-left: 0;
+.currentWeatherDescriptionContainer{
+    width: 30%;
+    text-align: center;
+}
+
+.currentWeatherDescriptionContainer img{
+    height: 100px;
+    width: 100px;
+}
+
+.currentWeatherDetails{
+    width: 40%;
+}
+
+.currentWeather ul{
+    text-align: center;
+}
+
+.currentWeather li{
+    list-style-type: none;
 }
